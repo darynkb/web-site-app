@@ -22,7 +22,7 @@ const responses = {
     image: "/main.jpg"
   },
   "What's your educational background?": {
-    text: "**Nazarbayev University**\n\n1. **MS in Robotics Engineering** (Expected June 2026)\n   - Focusing on advanced robotics and AI applications\n   - Conducting research in tactile sensing and shape recognition\n\n2. **BS in Robotics and Mechatronics** (June 2024)\n   - Graduated with honors\n   - Specialized in robotics control systems and mechatronics design\n\nDuring my academic journey, I've been actively involved in various robotics projects and research initiatives, which have significantly contributed to my practical skills and theoretical knowledge in the field.",
+    text: "**Nazarbayev University**\n\n1. **MS in Robotics Engineering** (Expected June 2026)\n   - Focusing on advanced robotics and AI applications\n   - Conducting research in tactile sensing and shape recognition\n\n2. **BS in Robotics and Mechatronics** (June 2024)\n   - Specialized in robotics control systems and mechatronics design\n\nDuring my academic journey, I've been actively involved in various robotics projects and research initiatives, which have significantly contributed to my practical skills and theoretical knowledge in the field.",
     image: "/education.jpeg"
   },
   "What's your work experience?": {
@@ -177,7 +177,7 @@ export default function Home() {
         </div>
         
         <h2 className="text-xl text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          Welcome 👋 to my digital portfolio(aka DoraGPT)! I`&apos;`m a robotics engineer and
+          Welcome 👋 to my digital portfolio(aka DoraGPT)! I&apos;m a robotics engineer and
           researcher specializing in tactile sensing, shape recognition, and
           advanced mechanical design. Explore my journey, projects, and
           publications here.
