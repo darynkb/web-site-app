@@ -18,7 +18,7 @@ const suggestedPrompts = [
 
 const responses = {
   "Tell me about yourself": {
-    text: "I am currently pursuing an **MS in Robotics Engineering** at Nazarbayev University, having completed my **BS in Robotics and Mechatronics** at the same institution. My research and professional journey reflect a strong passion for advancing:\n\n <ul>- Tactile sensing\n- Robotics\n- Innovative engineering solutions </ul>\n\nBeyond my technical expertise, I enjoy:\n\n1. Mentoring students\n2. Designing energy-efficient vehicles\n3. Working on cutting-edge robotics applications",
+    text: "I am currently pursuing an **MS in Robotics Engineering** at Nazarbayev University, having completed my **BS in Robotics and Mechatronics** at the same institution. My research and professional journey reflect a strong passion for advancing:\n\n- Tactile sensing\n- Robotics\n- Innovative engineering solutions\n\nBeyond my technical expertise, I enjoy:\n\n1. Mentoring students\n2. Designing energy-efficient vehicles\n3. Working on cutting-edge robotics applications",
     image: "/main.jpg"
   },
   "What's your educational background?": {
@@ -65,14 +65,11 @@ function ResponseComponent({ content, isTyping }) {
     return lines.map((line, index) => {
       if (line.startsWith('- ')) {
         return <li key={index} className="ml-4">{renderStyledText(line.slice(2))}</li>
-      } 
-      else if (line.match(/^\d+\. /)) {
+      } else if (line.match(/^\d+\. /)) {
         return <li key={index} className="ml-4">{renderStyledText(line.slice(line.indexOf(' ') + 1))}</li>
-      } 
-      else if (line === '') {
+      } else if (line === '') {
         return <br key={index} />
-      } 
-      else {
+      } else {
         return <p key={index}>{line.split('**').map((part, i) => 
           i % 2 === 0 ? part : <strong key={i}>{part}</strong>
         )}</p>
@@ -180,7 +177,7 @@ export default function Home() {
         </div>
         
         <h2 className="text-xl text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          Welcome 👋 to my digital portfolio(aka DoraGPT)! I&apos;m a robotics engineer and
+          Welcome 👋 to my digital portfolio(aka DoraGPT)! I`&apos;`m a robotics engineer and
           researcher specializing in tactile sensing, shape recognition, and
           advanced mechanical design. Explore my journey, projects, and
           publications here.
