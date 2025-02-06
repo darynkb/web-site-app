@@ -22,19 +22,19 @@ const responses = {
     image: "/main.jpg"
   },
   "What's your educational background?": {
-    text: "**Nazarbayev University**\n\n1. **MS in Robotics Engineering** (Expected June 2026)\n   - Focusing on advanced robotics and AI applications\n   - Conducting research in tactile sensing and shape recognition\n\n2. **BS in Robotics and Mechatronics** (June 2024)\n   - Specialized in robotics control systems and mechatronics design\n\nDuring my academic journey, I've been actively involved in various robotics projects and research initiatives, which have significantly contributed to my practical skills and theoretical knowledge in the field.",
+    text: "**Nazarbayev University**\n\n**MS in Robotics Engineering** (Expected June 2026)\nGPA: 3.6/4.0 | Class rank: 3/23\n   - Focusing on advanced robotics and AI applications\n - Conducting research in tactile sensing and shape recognition\n\n**BS in Robotics and Mechatronics** (June 2024)\nGPA: 2.8/4.0 | Class rank: 10/21\n   - Specialized in robotics control systems and mechatronics design\n\nDuring my academic journey, I've been actively involved in various robotics projects and research initiatives, which have significantly contributed to my practical skills and theoretical knowledge in the field.",
     image: "/education.jpeg"
   },
   "What's your work experience?": {
-    text: "**Tactile Laboratory | Research Assistant** (May 2022 – Present)\n\n- Developed a Reverse Vending Machine using computer vision\n- Conducted breast cancer detection experiments with tactile gloves\n- Assembled actuators and designed tactile communication devices for the deaf-blind\n\n**BCPDAIFCQWANT | Project Manager & Coding Mentor** (Jun 2022 – Apr 2023)\n\n- Managed two cohorts for Qwant Summer School on web development\n- Mentored high school students on Qwasar.io for advanced coding projects\n\nThese experiences have honed my skills in project management, mentoring, and applying robotics technologies to real-world problems.",
+    text: "**Tactile Laboratory | Research Assistant** (May 2022 – Present)\n\n- Developed a Reverse Vending Machine using computer vision\n- Silicon moulded 2 sets of breast prototypes with different lumps\n- Conducted breast cancer detection experiments with tactile gloves\n- Assembled actuators and designed tactile communication devices for the deaf-blind\n\n**BCPDAIFCQWANT | Project Manager & Coding Mentor** (Jun 2022 – Apr 2023)\n\n- Managed two cohorts for Qwant Summer School on web development\n- Mentored high school students on Qwasar.io for advanced coding projects\n\nThese experiences have honed my skills in project management, mentoring, and applying robotics technologies to real-world problems.",
     image: "/lab1.jpg"
   },
   "What are your key projects and research?": {
-    text: "**Projects:**\n\n1. **Shell Eco-Marathon 'Bulan' Team | Chief Mechanical Engineer**\n   - Led the design and manufacture of an energy-efficient prototype vehicle\n   - Developed an aluminum chassis and carbon body\n\n2. **Meteo Station IoT Device**\n   - Designed a remote monitoring system for temperature and humidity in storage rooms\n\n**Research:**\n\n1. **Shape Recognition Using Planar Snake Robot** (Sep 2023 – Present)\n   - Developed a tactile sensor for shape recognition and 3D point cloud reconstruction\n\n2. **Tactile Palpation of Breast Prototypes** (Mar 2024 – Present)\n   - Utilized a UR5 robot for tactile imaging and pressure profile generation\n\nThese projects and research initiatives demonstrate my expertise in robotics, mechanical design, and innovative sensing technologies.",
+    text: "**Projects:**\n\n**Shell Eco-Marathon 'Bulan' Team | Chief Mechanical Engineer | Mar 2024 - Feb 2025** \n- Led CAD design and optimization of an energy-efficient prototype EV for competition.\n- Manufactured aluminum chassis and carbon body for the prototype.\n- Coordinated team logistics and ensured compliance with event regulations of the Shell Eco Marathon Asia 2025 in Qatar. \n\n**Meteo Station IoT Device**\n- Designed a remote monitoring system for temperature and humidity in storage rooms\n\n**Research:**\n\n**NUSense: Robust Soft Optical Tactile Sensor (Jul 2024 – Present)\n- Conducted a set of experiments on quantitative estimation of VBTS shear deformation via UR5 manipulator. Currently, designing a sophisticated version of NUSense.\n\n**Shape Recognition Using Planar Snake Robot** (Sep 2023 – Present)\n- Developed a tactile sensor for shape recognition and 3D point cloud reconstruction via snake robot manipulation.\n\n**Tactile Palpation of Breast Prototypes** (Mar 2024 – Present)\n- Utilized a UR5 robot for tactile imaging and pressure profile generation on breast cancer detection.\n\nThese projects and research initiatives demonstrate my expertise in robotics, mechanical design, and innovative sensing technologies.",
     image: "/lab2.jpg"
   },
   "What are your skills and publications?": {
-    text: "**Skills:**\n\n- **Programming:** Python, C/C++, JavaScript, MATLAB\n- **Technologies:** SolidWorks, ROS, Detectron2, Arduino, Git\n\n**Publications:**\n\n1. **'Honeycomb-Inspired Metamaterial for Tactile Sensors'** in IEEE Sensors Journal\n2. **'NUSense: Robust Soft Optical Tactile Sensor'** (Submitted to IEEE ICRA)\n\n**Awards:**\n\n- nFactorial Incubator Finalist (2018)\n- ABC Incubation Finalist (2019)\n- Peer Tutor at Nazarbayev University (2021)\n\nThese skills, publications, and awards reflect my dedication to advancing the field of robotics and my commitment to academic excellence.",
+    text: "**Skills:**\n\n- **Programming:** Python, C/C++, JavaScript, MATLAB\n- **Technologies:** SolidWorks, ROS, Detectron2, Arduino, Git\n\n**Publications:**\n\n1. [**'Honeycomb-Inspired Metamaterial for Tactile Sensors'**](https://doi.org/10.1109/JSEN.2024.3492498) in IEEE Sensors Journal\n2. [**'NUSense: Robust Soft Optical Tactile Sensor'**](https://arxiv.org/abs/2410.23516) (Submitted to IEEE ICRA)\n\n**Awards:**\n\n- nFactorial Incubator Finalist (2018)\n- ABC Incubation Finalist (2019)\n- CS Peer Tutor at Nazarbayev University (2021)\n- Yessenov Foundation Research Scholarship Award (2024)\n\nThese skills, publications, and awards reflect my dedication to advancing the field of robotics and my commitment to academic excellence.",
     image: "/pub.jpeg"
   }
 }
@@ -43,14 +43,17 @@ function ResponseComponent({ content, isTyping }) {
   const [displayedText, setDisplayedText] = useState("")
 
   useEffect(() => {
+    if (!content?.text) return;
+    
     setDisplayedText("")
 
     if (isTyping) {
       let i = 0
       const intervalId = setInterval(() => {
-        setDisplayedText((prev) => prev + content.text[i])
-        i++
-        if (i === content.text.length) {
+        if (i < content.text.length) {
+          setDisplayedText((prev) => prev + content.text[i])
+          i++
+        } else {
           clearInterval(intervalId)
         }
       }, 5)
@@ -58,22 +61,72 @@ function ResponseComponent({ content, isTyping }) {
     } else {
       setDisplayedText(content.text)
     }
-  }, [content.text, isTyping])
+  }, [content?.text, isTyping])
 
   const renderStyledText = (text) => {
+    if (!text) return null;
+    
     const lines = text.split('\n')
     return lines.map((line, index) => {
+      if (!line) return <br key={index} />;
+      
       if (line.startsWith('- ')) {
         return <li key={index} className="ml-4">{renderStyledText(line.slice(2))}</li>
-      } else if (line.match(/^\d+\. /)) {
-        return <li key={index} className="ml-4">{renderStyledText(line.slice(line.indexOf(' ') + 1))}</li>
-      } else if (line === '') {
-        return <br key={index} />
-      } else {
-        return <p key={index}>{line.split('**').map((part, i) => 
-          i % 2 === 0 ? part : <strong key={i}>{part}</strong>
-        )}</p>
+      } 
+      
+      if (line.match(/^\d+\. /)) {
+        // Check if line contains a markdown link
+        if (line.includes('[') && line.includes(']') && line.includes('(') && line.includes(')')) {
+          const linkMatch = line.match(/\[(.*?)\]\((.*?)\)/)
+          if (linkMatch) {
+            const [fullMatch, text, url] = linkMatch
+            const parts = line.split(fullMatch)
+            return (
+              <li key={index} className="ml-4">
+                <a 
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  {text.replace(/\*\*/g, '')}
+                </a>
+                {parts[1]}
+              </li>
+            )
+          }
+        }
+        return <li key={index} className="ml-4">{line.slice(line.indexOf(' ') + 1)}</li>
       }
+      
+      // Handle markdown links in regular text
+      if (line.includes('[') && line.includes(']') && line.includes('(') && line.includes(')')) {
+        const linkMatch = line.match(/\[(.*?)\]\((.*?)\)/)
+        if (linkMatch) {
+          const [fullMatch, text, url] = linkMatch
+          const parts = line.split(fullMatch)
+          return (
+            <p key={index}>
+              <a 
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                {text.replace(/\*\*/g, '')}
+              </a>
+              {parts[1]}
+            </p>
+          )
+        }
+      }
+      
+      // Handle bold text
+      return <p key={index}>
+        {line.split('**').map((part, i) => 
+          i % 2 === 0 ? part : <strong key={i}>{part}</strong>
+        )}
+      </p>
     })
   }
 
@@ -81,7 +134,7 @@ function ResponseComponent({ content, isTyping }) {
     <Card className="w-full">
       <CardContent className="p-6">
         <div className="flex flex-col md:flex-row gap-4">
-          {content.image && (
+          {content?.image && (
             <div className="w-full md:w-1/3">
               <Image
                 src={content.image}
@@ -92,7 +145,7 @@ function ResponseComponent({ content, isTyping }) {
               />
             </div>
           )}
-          <div className={`${content.image ? 'w-full md:w-2/3' : 'w-full'}`}>
+          <div className={`${content?.image ? 'w-full md:w-2/3' : 'w-full'}`}>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -162,12 +215,11 @@ export default function Home() {
           <div className="w-full items-center flex gap-5" >
             <h1 className="text-4xl text-center sm:text-left font-[family-name:var(--font-geist-mono)]">Daryn Kenzhebek</h1>
             <Image
-            src = "/logo.jpg"
-            alt = "DoraGPT"
-            height={100}
-            width={50}
-            className="rounded-full object-cover"
-
+              src="/logo.jpg"
+              alt="DoraGPT"
+              height={100}
+              width={50}
+              className="rounded-full object-cover"
             />
           </div>
           <Button variant="outline" size="icon" onClick={toggleDarkMode} className="ml-4">
@@ -231,8 +283,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-
     </div>
   )
 }
