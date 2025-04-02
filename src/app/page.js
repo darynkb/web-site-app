@@ -26,7 +26,7 @@ const responses = {
     image: "/education.jpeg"
   },
   "What's your work experience?": {
-    text: "**Tactile Laboratory | Research Assistant** (May 2022 – Present)\n\n- Developed a Reverse Vending Machine using computer vision\n- Silicon moulded 2 sets of breast prototypes with different lumps\n- Conducted breast cancer detection experiments with tactile gloves\n- Assembled actuators and designed tactile communication devices for the deaf-blind\n\n**BCPDAIFCQWANT | Project Manager & Coding Mentor** (Jun 2022 – Apr 2023)\n\n- Managed two cohorts for Qwant Summer School on web development\n- Mentored high school students on Qwasar.io for advanced coding projects\n\nThese experiences have honed my skills in project management, mentoring, and applying robotics technologies to real-world problems.",
+    text: "**Tactile Laboratory | Research Assistant** (May 2022 – Present)\n\n- Developed a Reverse Vending Machine using computer vision\n- 3D-printed multi-material honeycomb end-effectors and assisted UR5-based contact and pendulum experiments using velocity control\n- Characterized optical tactile sensor (force estimation, localization, hysteresis) using UR5, developed a ROS data collection pipeline\n- Silicon moulded 2 sets of breast prototypes with different lumps\n- Conducted breast cancer detection experiments with tactile glove\n- Assembled actuators and designed tactile communication devices for the deaf-blind\n\n**BCPDAIFCQWANT | Project Manager & Coding Mentor** (Jun 2022 – Apr 2023)\n\n- Managed two cohorts for Qwant Summer School on web development\n- Mentored high school students on Qwasar.io for advanced coding projects\n\nThese experiences have honed my skills in project management, mentoring, and applying robotics technologies to real-world problems.",
     image: "/lab1.jpg"
   },
   "What are your key projects and research?": {
@@ -34,7 +34,7 @@ const responses = {
     image: "/lab2.jpg"
   },
   "What are your skills and publications?": {
-    text: "**Skills:**\n\n- **Programming:** Python, C/C++, JavaScript, MATLAB\n- **Technologies:** SolidWorks, ROS, Detectron2, Arduino, Git\n\n**Publications:**\n\n1. [**'Honeycomb-Inspired Metamaterial for Tactile Sensors'**](https://doi.org/10.1109/JSEN.2024.3492498) in IEEE Sensors Journal\n2. [**'NUSense: Robust Soft Optical Tactile Sensor'**](https://arxiv.org/abs/2410.23516) (Submitted to IEEE ICRA)\n\n**Awards:**\n\n- nFactorial Incubator Finalist (2018)\n- ABC Incubation Finalist (2019)\n- CS Peer Tutor at Nazarbayev University (2021)\n- Yessenov Foundation Research Scholarship Award (2024)\n\nThese skills, publications, and awards reflect my dedication to advancing the field of robotics and my commitment to academic excellence.",
+    text: "**Skills:**\n\n- **Programming:** Python, C/C++, Java, JavaScript, MATLAB\n- **Technologies:** Linux, SolidWorks, UR, ROS, DAQ, CUDA, Detectron2, Arduino, KiCad Git\n\n**Publications:**\n\n1. [**'Honeycomb-Inspired Metamaterial for Tactile Sensors'**](https://doi.org/10.1109/JSEN.2024.3492498) in IEEE Sensors Journal\n2. [**'NUSense: Shear Based Robust Optical Tactile Sensor'**](https://arxiv.org/abs/2410.23516) (Submitted to IEEE IROS 2025)\n\n**Awards:**\n\n- nFactorial Incubator Finalist (2018)\n- ABC Incubation Finalist (2019)\n- CS Peer Tutor at Nazarbayev University (2021)\n- Yessenov Foundation Research Scholarship Award (2024)\n\nThese skills, publications, and awards reflect my dedication to advancing the field of robotics and my commitment to academic excellence.",
     image: "/pub.jpeg"
   }
 }
