@@ -34,7 +34,7 @@ const responses = {
     image: "/lab2.jpg"
   },
   "What are your skills and publications?": {
-    text: "**Skills:**\n\n- **Programming:** Python, C/C++, Java, JavaScript, MATLAB\n- **Technologies:** Linux, SolidWorks, UR, ROS, DAQ, CUDA, Detectron2, Arduino, KiCad, Git\n\n**Publications:**\n\n1. [**'Honeycomb-Inspired Metamaterial for Tactile Sensors'**](https://doi.org/10.1109/JSEN.2024.3492498) in IEEE Sensors Journal\n2. [**'NUSense: Shear Based Robust Optical Tactile Sensor'**](https://arxiv.org/abs/2410.23516) (Submitted to IEEE IROS 2025)\n\n**Awards:**\n\n- nFactorial Incubator Finalist (2018)\n- ABC Incubation Finalist (2019)\n- CS Peer Tutor at Nazarbayev University (2021)\n- Yessenov Foundation Research Scholarship Award (2024)\n\nThese skills, publications, and awards reflect my dedication to advancing the field of robotics and my commitment to academic excellence.",
+    text: "**Skills:**\n\n- **Programming:** Python, C/C++, Java, JavaScript, MATLAB\n- **Technologies:** Linux, SolidWorks, UR, ROS, DAQ, CUDA, Detectron2, Arduino, KiCad, Git\n\n**Publications:**\n\n1. [**'Honeycomb-Inspired Metamaterial for Tactile Sensors'**](https://doi.org/10.1109/JSEN.2024.3492498) in IEEE Sensors Journal\n2. [**'NUSense: Shear Based Robust Optical Tactile Sensor'**](https://arxiv.org/abs/2410.23516) (Accepted to IEEE IROS 2025)\n\n**Awards:**\n\n- nFactorial Incubator Finalist (2018)\n- ABC Incubation Finalist (2019)\n- CS Peer Tutor at Nazarbayev University (2021)\n- Yessenov Foundation Research Scholarship Award (2024)\n\nThese skills, publications, and awards reflect my dedication to advancing the field of robotics and my commitment to academic excellence.",
     image: "/pub.jpeg"
   }
 }
