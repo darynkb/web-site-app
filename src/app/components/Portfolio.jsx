@@ -8,6 +8,29 @@ import { Moon, Sun, Send } from 'lucide-react'
 import { motion } from "framer-motion"
 import Image from 'next/image'
 
+const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+// Picks the section whose keywords best match a free-typed question.
+// A keyword matches the start of a word, so "publi" matches "publications".
+function findSection(sections, input) {
+  const query = input.trim().toLowerCase()
+  const exact = sections.find((s) => s.prompt.toLowerCase() === query)
+  if (exact) return exact
+
+  let best = null
+  let bestScore = 0
+  for (const section of sections) {
+    const score = section.keywords.filter((kw) =>
+      new RegExp(`(^|[^a-z0-9])${escapeRegExp(kw)}`).test(query)
+    ).length
+    if (score > bestScore) {
+      best = section
+      bestScore = score
+    }
+  }
+  return best
+}
+
 function ResponseComponent({ content, isTyping, onDone }) {
   const [displayedText, setDisplayedText] = useState("")
 
@@ -165,10 +188,9 @@ export default function Portfolio({ intro, sections }) {
   const handleSubmit = () => {
     if (isTyping || !inputText) return
 
-    const query = inputText.trim().toLowerCase()
-    const section = sections.find((s) => s.prompt.toLowerCase() === query)
+    const section = findSection(sections, inputText)
     setIsTyping(true)
-    setCurrentResponse(section || { text: "I'm sorry, I don't have information about that topic.", image: null })
+    setCurrentResponse(section || { text: "I'm sorry, I don't have information about that topic. Try one of the suggested questions above.", image: null })
   }
 
   return (
@@ -232,7 +254,7 @@ export default function Portfolio({ intro, sections }) {
       </main>
       <footer className="mt-12 w-full max-w-3xl mx-auto">
         <div className="flex justify-center items-center p-6">
-          <div className="flex space-x-4 text-neutral-600 dark:text-neutral-400">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-neutral-600 dark:text-neutral-400">
             <a href="https://www.linkedin.com/in/daryn-kenzhebek7182/" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-800 dark:hover:text-neutral-200">
               LinkedIn
             </a>
@@ -243,6 +265,10 @@ export default function Portfolio({ intro, sections }) {
             <span>|</span>
             <a href="https://github.com/darynkb" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-800 dark:hover:text-neutral-200">
               GitHub
+            </a>
+            <span>|</span>
+            <a href="https://scholar.google.com/citations?user=fmO7ya0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-800 dark:hover:text-neutral-200">
+              Google Scholar
             </a>
           </div>
         </div>

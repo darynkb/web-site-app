@@ -13,12 +13,18 @@ function loadProfile() {
     const [heading, ...bodyLines] = chunk.split("\n")
     let body = bodyLines.join("\n").trim()
     let image = null
-    const imageMatch = body.match(/^image:\s*(\S+)\s*\n?/i)
-    if (imageMatch) {
-      image = imageMatch[1]
-      body = body.slice(imageMatch[0].length).trim()
+    let keywords = []
+    // Optional "image:" and "keywords:" lines at the top of a section, in any order
+    let meta
+    while ((meta = body.match(/^(image|keywords):[ \t]*(.*)\n?/i))) {
+      if (meta[1].toLowerCase() === "image") {
+        image = meta[2].trim()
+      } else {
+        keywords = meta[2].split(",").map((k) => k.trim().toLowerCase()).filter(Boolean)
+      }
+      body = body.slice(meta[0].length).trim()
     }
-    return { prompt: heading.trim(), text: body, image }
+    return { prompt: heading.trim(), text: body, image, keywords }
   })
 
   return { intro: introChunk.trim(), sections }

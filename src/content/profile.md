@@ -5,7 +5,13 @@
   - Text before the first "## " heading is the welcome text under your name.
   - Each "## " heading becomes a suggested-prompt button; its body is the answer.
     Section order here = button order on the page.
-  - Optional first line of a section: "image: /file.jpg" (file must be in /public).
+  - Optional first lines of a section:
+      image: /file.jpg   (file must be in /public)
+      keywords: work, job, ...
+    Keywords let visitors type their own questions: the section whose keywords
+    appear most in the question is shown. A keyword matches the start of a word,
+    so "publi" matches "publication" and "published", and "stud" matches "study"
+    and "studied". Avoid very short keywords: "ev" would also match "every".
   - Supported formatting: **bold**, "- " bullet lists, "1. " numbered lists,
     [link text](https://...) — one link per line. Blank line = paragraph break.
   - Comments like this one are ignored.
@@ -15,6 +21,7 @@ Welcome 👋 to my digital portfolio aka DoraGPT! I'm a robotics engineer and re
 
 ## Tell me about yourself
 image: /main.jpg
+keywords: yourself, who are you, who is, introduce, bio, hobb, interest, passion, enjoy, daryn
 
 I am currently pursuing a **PhD in Robotics Engineering** at Nazarbayev University, having completed my **MS in Robotics Engineering** and **BS in Robotics and Mechatronics** at the same institution. My research and professional journey reflect a strong passion for advancing:
 
@@ -30,6 +37,7 @@ Beyond my technical expertise, I enjoy:
 
 ## What's your educational background?
 image: /education.jpeg
+keywords: educat, background, stud, universit, degree, school, gpa, grade, rank, phd, master, bachelor, nazarbayev, graduat, academ
 
 **Nazarbayev University**
 
@@ -50,6 +58,7 @@ During my academic journey, I've been actively involved in various robotics proj
 
 ## What's your work experience?
 image: /lab1.jpg
+keywords: work, job, employ, compan, experience, career, intern, freedom, position, role, plc, siemens, kiosk, drone, mentor, industr
 
 **Freedom Lifestyle Group | Robotics Engineer** (Jan 2026 – Present)
 
@@ -83,6 +92,7 @@ These experiences have honed my skills in project management, mentoring, and app
 
 ## What are your key projects and research?
 image: /lab2.jpg
+keywords: project, research, build, robot, sensor, tactile, nusense, cilia, magnetic, snake, shell, eco, marathon, vehicle, iot, breast
 
 **Projects:**
 
@@ -112,6 +122,7 @@ These projects and research initiatives demonstrate my expertise in robotics, me
 
 ## What are your skills and publications?
 image: /pub.jpeg
+keywords: skill, publi, paper, journal, conference, iros, ra-l, scholar, citation, award, prize, scholarship, programming, language, python, c++, ros, solidworks, technolog, tool, stack
 
 **Skills:**
 
