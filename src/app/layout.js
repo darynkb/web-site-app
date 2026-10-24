@@ -13,7 +13,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "DoraGPT",
+  title: "Daryn Kenzhebek – Robotics Researcher | DoraGPT",
   description: "Ask me anything about myself!",
 };
 

@@ -38,3 +38,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# node_modules lives in node_modules.nosync so iCloud never offloads it
+/node_modules.nosync
+/node_modules.broken.nosync
